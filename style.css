@@ -73,11 +73,13 @@ main {
 /* BUTTONS CONTAINER */
 .buttons-container {
     display: flex;
-    justify-content: center; /* center buttons horizontally */
+    justify-content: center;
     gap: 15px;
-    flex-wrap: wrap; /* allow wrapping if screen is small */
+    flex-wrap: wrap;
     margin: 20px 0;
-    pointer-events: auto; /* ensure links inside are clickable */
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 /* BUTTON STYLING */
@@ -85,52 +87,31 @@ main {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 19px 38px; /* 20% bigger than original */
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
-    color: white;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.5px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    transition: all 0.4s ease;
-    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.35);
     position: relative;
-    overflow: hidden;
-    z-index: 1;
-    flex: 1 1 auto; /* responsive shrink/grow */
-    min-width: 150px; /* prevent too small */
-    max-width: 250px;
+    z-index: 20;
+    flex: 0 1 auto;
+    min-width: 160px;
+    max-width: 240px;
     text-align: center;
-    pointer-events: auto; /* ensure clickable */
+    pointer-events: auto;
 }
 
-.movierulz-btn i {
-    margin-right: 6px;
-}
-
-/* Hover & Pulse */
+/* Hover */
 .movierulz-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(106, 17, 203, 0.6);
-    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
-}
-
-.movierulz-btn.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
-    }
-    50% {
-        box-shadow: 0 6px 20px rgba(106, 17, 203, 0.7);
-    }
-    100% {
-        box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
-    }
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(37, 117, 252, 0.6);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
 }
 
 /* IMAGE */
@@ -167,9 +148,9 @@ article ul {
         margin-left: 10px;
     }
     .movierulz-btn {
-        padding: 14px 28px;
-        font-size: 1.2rem;
-        min-width: 120px;
+        padding: 14px 22px;
+        font-size: 1rem;
+        min-width: 140px;
     }
 }
 
@@ -183,8 +164,8 @@ article ul {
         gap: 10px;
     }
     .movierulz-btn {
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        min-width: 100px;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        min-width: 120px;
     }
 }
