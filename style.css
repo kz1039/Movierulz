@@ -1,0 +1,180 @@
+/* GENERAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #f0f0f0;
+    color: #111;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-bottom: 3px solid #6a11cb;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #6a11cb;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #111;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border: 2px solid #6a11cb;
+    color: #6a11cb;
+}
+
+/* MAIN */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #6a11cb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* BUTTONS CONTAINER */
+.buttons-container {
+    display: flex;
+    justify-content: center;     /* center buttons horizontally */
+    gap: 15px;
+    flex-wrap: nowrap;           /* keep buttons in one line */
+    margin: 20px 0;
+}
+
+/* BUTTON STYLING */
+.movierulz-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 19px 38px;          /* 20% bigger than original */
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    flex: 1 1 auto;               /* responsive shrink/grow */
+    min-width: 150px;             /* prevent too small */
+    max-width: 250px;
+    text-align: center;
+}
+
+.movierulz-btn i {
+    margin-right: 6px;
+}
+
+/* Hover & Pulse */
+.movierulz-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(106, 17, 203, 0.6);
+    background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}
+
+.movierulz-btn.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4); }
+    50% { box-shadow: 0 6px 20px rgba(106, 17, 203, 0.7); }
+    100% { box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4); }
+}
+
+/* IMAGE */
+.main-image {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ARTICLE */
+article h2, article h3 {
+    color: #6a11cb;
+    margin-top: 20px;
+}
+
+article p, article ul {
+    margin-bottom: 15px;
+}
+
+article ul {
+    padding-left: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav ul li {
+        margin-left: 10px;
+    }
+    .movierulz-btn {
+        padding: 14px 28px;
+        font-size: 1.2rem;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .movierulz-btn {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        min-width: 100px;
+    }
+}
