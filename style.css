@@ -75,7 +75,7 @@ main {
     display: flex;
     justify-content: center; /* center buttons horizontally */
     gap: 15px;
-    flex-wrap: nowrap; /* keep buttons in one line */
+    flex-wrap: wrap; /* allow wrapping if screen is small */
     margin: 20px 0;
 }
 
